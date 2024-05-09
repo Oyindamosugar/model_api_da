@@ -44,12 +44,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-def list_all_files(bucket_name):
+
+def list_top_level_prefixes(bucket_name):
     """
-    List all files in an S3 bucket.
+    List top-level 'folder' names (prefixes) in an S3 bucket, retaining the trailing slashes.
 
     :param bucket_name: str - Name of the S3 bucket
-    :return: list - A list of file keys in the bucket
+    :return: list - A list of top-level prefix names with trailing slashes
     """
     # Create a session using environment variables for AWS credentials
     session = boto3.Session(
@@ -59,28 +60,28 @@ def list_all_files(bucket_name):
     )
 
     s3 = session.client('s3')
+    
+    # Initialize a list to hold unique top-level prefixes
+    prefixes = []
 
-    # Initialize list to hold file keys
-    file_keys = []
-
-    # Paginate through results to handle large buckets
+    # Use a paginator to handle potential large lists of objects
     paginator = s3.get_paginator('list_objects_v2')
-    for page in paginator.paginate(Bucket=bucket_name):
-        # Check if 'Contents' key is present in the response dictionary
-        if 'Contents' in page:
-            for obj in page['Contents']:
-                file_keys.append(obj['Key'])
+    for page in paginator.paginate(Bucket=bucket_name, Delimiter='/'):
+        # 'CommonPrefixes' contains the folder/prefix information at the top level
+        for prefix in page.get('CommonPrefixes', []):
+            # Add the prefix as is, with the trailing slash
+            prefixes.append(prefix['Prefix'])
 
-    return file_keys
+    return prefixes
 
 # Usage Example
-bucket = 'dissertationartefact'
-# Replace with your S3 bucket name
-files = list_all_files(bucket)
-print("Files in S3 bucket:", files)
+bucket = 'dissertationartefact'  # Replace with your S3 bucket name
+top_level_prefixes = list_top_level_prefixes(bucket)
+for prefix in top_level_prefixes:
+    print(prefix)  # This will print each prefix with the trailing slash
 
 # Load the Saved Model
-model_path = 'dissertationartefact/model'  # Update this to the path of your saved model
+model_path = prefix # Update this to the path of your saved model
 loaded_model = tf.keras.models.load_model(model_path)
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
