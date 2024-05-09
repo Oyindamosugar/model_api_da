@@ -1,0 +1,104 @@
+1.As a bank customer, I want to be able to view my account balance online, so that I can keep track of my finances.
+
+Acceptance Criteria:
+
+The system should display the current balance of the customer's account when they log in.
+The balance displayed should be accurate and up-to-date, reflecting the most recent transactions.
+The system should only display the balance of the account associated with the customer's login credentials, and not any other accounts.
+The system should provide a secure login process to ensure the confidentiality and privacy of the customer's account information.
+
+
+2.As a small business owner with limited resources, I want the banking system to have low fees, be easy to use, provide access to credit, and allow me to manage my business finances efficiently so that I can focus on growing my business.
+
+Acceptance Criteria:
+
+The banking system should have lower fees compared to other banking systems available in the market.
+The banking system should be easy to use with a user-friendly interface and intuitive navigation.
+The banking system should offer access to credit with flexible repayment terms and interest rates.
+The banking system should allow me to manage my business finances efficiently with features like account balance tracking, transaction history, and budgeting tools.
+
+
+3.As a new customer, I want the banking system to have a user-friendly interface, offer quick account setup, provide detailed instructions for transactions, and offer customer support so that I can feel confident using the system.
+
+Acceptance Criteria:
+
+The banking system should have a user-friendly interface that is easy to navigate for new customers with minimal guidance or support required.
+The account setup process should be quick and straightforward, taking no longer than 15 minutes to complete.
+The banking system should provide detailed instructions for all types of transactions, including deposits, withdrawals, and transfers, to ensure that new customers feel confident using the system.
+The banking system should offer customer support through multiple channels, including phone, email, and chat, with fast response times to address any issues or concerns.
+
+
+4.As a frequent traveler who regularly uses multiple currencies, I want the banking system to offer competitive exchange rates, provide easy-to-use currency conversion tools, allow me to manage multiple accounts in different currencies, and offer international payment options so that I can manage my finances effectively while abroad.
+
+Acceptance Criteria:
+
+The banking system should offer exchange rates that are competitive and updated in real-time to reflect current market rates.
+The banking system should provide easy-to-use currency conversion tools that allow me to quickly convert between different currencies without having to navigate through multiple screens.
+The banking system should allow me to manage multiple accounts in different currencies, including the ability to view account balances, transaction history, and make transfers between accounts.
+The banking system should offer international payment options, including the ability to make wire transfers and pay bills in foreign currencies, with competitive fees and processing times.
+
+
+5.As an elderly customer with limited mobility, I want the banking system to have large, easy-to-read fonts and provide clear audio instructions, offer online banking options with large, clear buttons, have wheelchair accessibility in branches, and offer telephone support with customer service representatives who are patient and helpful so that I can manage my finances independently.
+
+Acceptance Criteria:
+
+The banking system should have large, easy-to-read fonts and provide clear audio instructions for all features and functions, ensuring that elderly customers can easily navigate the system.
+The online banking options should have large, clear buttons that are easy to find and use, making it simple for elderly customers to manage their finances without assistance.
+All bank branches should have wheelchair accessibility, including ramps, wide doorways, and elevators, ensuring that elderly customers can easily access all areas of the branch.
+Telephone support should be available with customer service representatives who are patient, helpful, and trained to assist elderly customers with any questions or issues they may have when using the banking system.
+
+
+6.As a parent who wants to teach financial literacy to my children, I want the banking system to offer options for children's savings accounts, educational resources about budgeting and saving, parental controls for online banking, and user-friendly tools for monitoring their spending so that my children can learn about money management while using a safe and secure platform.
+
+Acceptance Criteria:
+
+The banking system should offer savings accounts specifically designed for children with attractive interest rates.
+The educational resources should be easy to access and understand, and cover topics like budgeting, saving, and responsible credit card use.
+Parental controls should allow parents to set spending limits, restrict certain transactions, and receive notifications of account activity.
+The tools for monitoring spending should be user-friendly and include visualizations such as graphs or charts.
+
+
+7.As a high net worth individual who values privacy, I want the banking system to provide top-level security features like biometric authentication, advanced encryption, strict data protection policies, and a dedicated customer service team that can handle my unique needs so that my financial information is kept safe and secure.
+
+Acceptance Criteria:
+
+The banking system should have biometric authentication features such as facial recognition or fingerprint scanning, in addition to traditional login methods like passwords.
+The system should use advanced encryption methods to protect customer data from cyber attacks or breaches.
+The banking system should have strict data protection policies in place, such as regular data backups and secure data storage methods.
+The customer service team should have expertise in handling high net worth individuals and be able to provide personalized attention and support as needed.
+
+
+8.As a freelancer with variable income, I want the banking system to offer flexible account options, customizable notifications about transactions, real-time reporting of my balance, and the ability to categorize my expenses so that I can manage my finances more effectively and have a better understanding of my cash flow.
+
+Acceptance Criteria:
+
+The banking system should allow the freelancer to choose from a range of account options based on their income fluctuations.
+The system should provide customizable notifications that can alert the freelancer about transactions, account balance, and other relevant updates.
+The banking system should provide real-time reporting of the freelancer's balance, with the option to view past transactions.
+The system should provide the ability to categorize expenses, helping the freelancer to understand where their money is going and making it easier to file taxes.
+
+
+9.As a young adult who is just starting to build credit, I want the banking system to offer educational resources about credit building, low interest rates on loans, credit cards with easy-to-understand terms, and personalized advice from financial experts so that I can build my credit score and make informed financial decisions.
+
+Acceptance Criteria:
+
+The banking system provides clear and accessible educational resources on credit building, including information on credit scores, credit reports, and how to improve credit history.
+Loan products offered by the banking system have low interest rates and are tailored to the needs of young adults, such as small loan amounts and flexible repayment terms.
+Credit cards offered by the banking system have transparent terms and conditions, including information on fees, interest rates, and rewards programs, and are designed to help young adults establish and improve their credit.
+The banking system offers personalized advice from financial experts, including guidance on budgeting, debt management, and credit building strategies.
+
+
+10.As a user with a physical disability, I want the banking system to be accessible and easy to use with assistive technologies like screen readers, so that I can manage my finances independently.
+
+Acceptance criteria:
+
+The banking system should be compatible with common screen readers, such as JAWS and NVDA.
+All buttons, forms, and other interactive elements in the system should be labeled and identifiable by screen readers.
+The system should have high contrast color schemes and allow for adjustments to font size and style.
+Keyboard navigation should be available for all features of the system, allowing users to navigate without a mouse.
+
+
+
+
+
+

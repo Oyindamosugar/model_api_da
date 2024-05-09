@@ -1,0 +1,121 @@
+{
+    "nodes": [
+        {
+            "id": "1",
+            "labels": "Functional",
+            "properties": {
+                "text": "1.As a bank customer, I want to be able to view my account balance online, so that I can keep track of my finances.",
+                "predicted_class": "Functional"
+            },
+            "relationships": ["2", "3", "4", "5", "13"]
+        },
+        {
+            "id": "2",
+            "labels": "Functional",
+            "properties": {
+                "text": "The system should display the current balance of the customer's account when they log in.",
+                "predicted_class": "Functional"
+            },
+            "relationships": ["3", "5", "13"]
+        },
+        {
+            "id": "3",
+            "labels": "Non-functional",
+            "properties": {
+                "text": "The balance displayed should be accurate and up-to-date, reflecting the most recent transactions.",
+                "predicted_class": "Non-functional"
+            },
+            "relationships": ["2", "3", "4", "5", "13"]
+        },
+        {
+            "id": "4",
+            "labels": "Functional",
+            "properties": {
+                "text": "The system should only display the balance of the account associated with the customer's login credentials, and not any other accounts.",
+                "predicted_class": "Functional"
+            },
+            "relationships": ["3", "2", "5", "13"]
+        },
+        {
+            "id": "5",
+            "labels": "Functional",
+            "properties": {
+                "text": "The system should provide a secure login process to ensure the confidentiality and privacy of the customer's account information.",
+                "predicted_class": "Functional"
+            },
+            "relationships": ["3", "4", "13"]
+        },
+        {
+            "id": "6",
+            "labels": "Non-functional",
+            "properties": {
+                "text": "2.As a small business owner with limited resources, I want the banking system to have low fees, be easy to use, provide access to credit, and allow me to manage my business finances efficiently so that I can focus on growing my business.",
+                "predicted_class": "Non-functional"
+            },
+            "relationships": ["3", "4", "5", "8", "9", "10", "13"]
+        },
+        {
+            "id": "7",
+            "labels": "Non-functional",
+            "properties": {
+                "text": "The banking system should have lower fees compared to other banking systems available in the market.",
+                "predicted_class": "Non-functional"
+            },
+            "relationships": ["6"]
+        },
+        {
+            "id": "8",
+            "labels": "Non-functional",
+            "properties": {
+                "text": "The banking system should be easy to use with a user-friendly interface and intuitive navigation.",
+                "predicted_class": "Non-functional"
+            },
+            "relationships": ["1", "2", "3", "4", "5", "13"]
+        },
+        {
+            "id": "9",
+            "labels": "Functional",
+            "properties": {
+                "text": "The banking system should offer access to credit with flexible repayment terms and interest rates.",
+                "predicted_class": "Functional"
+            },
+            "relationships": ["3", "5", "13"]
+        },
+        {
+            "id": "10",
+            "labels": "Non-functional",
+            "properties": {
+                "text": "The banking system should allow me to manage my business finances efficiently with features like account balance tracking, transaction history, and budgeting tools.",
+                "predicted_class": "Non-functional"
+            },
+            "relationships": ["3", "5", "13"]
+        },
+        {
+            "id": "11",
+            "labels": "Non-functional",
+            "properties": {
+                "text": "3.As a new customer, I want the banking system to have a user-friendly interface, offer quick account setup, provide detailed instructions for transactions, and offer customer support so that I can feel confident using the system.",
+                "predicted_class": "Non-functional"
+            },
+            "relationships": ["1", "2", "3", "5", "8", "11", "13"]
+        },
+        {
+            "id": "12",
+            "labels": "Non-functional",
+            "properties": {
+                "text": "The banking system should have a user-friendly interface that is easy to navigate for new customers with minimal guidance or support required.",
+                "predicted_class": "Non-functional"
+            },
+            "relationships": ["2", "5", "13"]
+        },
+        {
+            "id": "13",
+            "labels": "Non-functional",
+            "properties": {
+                "text": "The account setup process should be quick and straightforward, taking no longer than 15 minutes to complete.",
+                "predicted_class": "Non-functional"
+            },
+            "relationships": ["1", "2", "5"]
+        }
+    ]
+}
