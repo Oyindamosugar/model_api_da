@@ -19,9 +19,9 @@ from text2cypher import Text2Cypher
 HARD_LIMIT_CONTEXT_RECORDS = 10
 
 neo4j_connection = Neo4jDatabase(
-    host=os.environ.get("NEO4J_URL", "bolt://localhost:7687"),
+    host=os.environ.get("NEO4J_URL", "neo4j+s://9507ceb2.databases.neo4j.io"),
     user=os.environ.get("NEO4J_USER", "neo4j"),
-    password=os.environ.get("NEO4J_PASS", "password"),
+    password=os.environ.get("NEO4J_PASS", "AUEt0WbwpSdl7LDdqfBc4jfsnwrPIlQFZkY_aKCTD-Y"),
     database=os.environ.get("NEO4J_DATABASE", "neo4j"),
 )
 
