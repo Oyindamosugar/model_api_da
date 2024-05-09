@@ -8,14 +8,12 @@ from fastapi import FastAPI, UploadFile, File, HTTPException, WebSocket, WebSock
 from fastapi.middleware.cors import CORSMiddleware
 from transformers import BertTokenizer
 
-from SRS.fewshot_examples2 import get_fewshot_examples2
-from SRS.save_to_neo4j_relationship import create_nodes_and_relationships
+from fewshot_examples2 import get_fewshot_examples2
+from save_to_neo4j_relationship import create_nodes_and_relationships
 from driver.neo4j import Neo4jDatabase
-from save_to_neo4j import save_results_to_neo4j
 from llm.openai import OpenAIChat
 from summarize_cypher_result import SummarizeCypherResult
 from text2cypher import Text2Cypher
-from fewshot_examples import get_fewshot_examples
 
 # Maximum number of records used in the context
 HARD_LIMIT_CONTEXT_RECORDS = 10
