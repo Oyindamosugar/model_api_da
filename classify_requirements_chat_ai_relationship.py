@@ -76,11 +76,11 @@ def list_all_files(bucket_name):
 # Usage Example
 bucket = 'dissertationartefact'
 # Replace with your S3 bucket name
-#files = list_all_files(bucket)
-#print("Files in S3 bucket:", files)
+files = list_all_files(bucket)
+print("Files in S3 bucket:", files)
 
 # Load the Saved Model
-model_path = 'dissertationartefact'  # Update this to the path of your saved model
+model_path = 'dissertationartefact/model'  # Update this to the path of your saved model
 loaded_model = tf.keras.models.load_model(model_path)
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
