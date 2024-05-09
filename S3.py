@@ -10,9 +10,9 @@ def list_all_files(bucket_name):
     """
     # Create a session using environment variables for AWS credentials
     session = boto3.Session(
-        aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID','AKIA3FLD43Z6AZA2XKWT'),
-        aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY', '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'),
-        region_name=os.getenv('AWS_DEFAULT_REGION', 'eu-north-1')  # Default to us-east-1 if region not set
+        aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID',''),
+        aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY', ''),
+        region_name=os.getenv('AWS_DEFAULT_REGION', '')  # Default to us-east-1 if region not set
     )
 
     s3 = session.client('s3')
