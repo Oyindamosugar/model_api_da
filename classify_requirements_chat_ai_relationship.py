@@ -81,7 +81,7 @@ for prefix in top_level_prefixes:
     print(prefix)  # This will print each prefix with the trailing slash
 
 # Load the Saved Model
-model_path = "s3://dissertationartefact/model" # Update this to the path of your saved model
+model_path = "s3://dissertationartefact/model/" # Update this to the path of your saved model
 loaded_model = tf.keras.models.load_model(model_path)
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
