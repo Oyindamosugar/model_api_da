@@ -12,3 +12,4 @@ openai==0.27.6
 gunicorn
 boto3
 awscli
+s3fs
