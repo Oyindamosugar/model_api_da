@@ -46,7 +46,7 @@ HARD_LIMIT_CONTEXT_RECORDS = 10
 # )
 
 # Initialize LLM modules
-openai_api_key = os.environ.get("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", None)
+openai_api_key = os.environ.get("", None)
 
 # Define FastAPI endpoint
 app = FastAPI()
