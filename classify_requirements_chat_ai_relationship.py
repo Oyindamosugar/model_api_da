@@ -8,25 +8,45 @@ from fastapi import FastAPI, UploadFile, File, HTTPException, WebSocket, WebSock
 from fastapi.middleware.cors import CORSMiddleware
 from transformers import BertTokenizer
 
-from fewshot_examples2 import get_fewshot_examples2
-from save_to_neo4j_relationship import create_nodes_and_relationships
-from driver.neo4j import Neo4jDatabase
+from SRS.driver.Neo4jConnector import Neo4jConnector
+from SRS.fewshot_examples2 import get_fewshot_examples2
+from SRS.neo4j_test import connect_to_neo4j_aura
+from SRS.save_to_neo4j_relationship import create_nodes_and_relationships
+# from driver.neo4j import Neo4jDatabase
+from save_to_neo4j import save_results_to_neo4j
 from llm.openai import OpenAIChat
 from summarize_cypher_result import SummarizeCypherResult
 from text2cypher import Text2Cypher
+from fewshot_examples import get_fewshot_examples
 
 # Maximum number of records used in the context
 HARD_LIMIT_CONTEXT_RECORDS = 10
 
-neo4j_connection = Neo4jDatabase(
-    host=os.environ.get("NEO4J_URL", "neo4j+s://9507ceb2.databases.neo4j.io"),
-    user=os.environ.get("NEO4J_USER", "neo4j"),
-    password=os.environ.get("NEO4J_PASS", "AUEt0WbwpSdl7LDdqfBc4jfsnwrPIlQFZkY_aKCTD-Y"),
-    database=os.environ.get("NEO4J_DATABASE", "neo4j"),
-)
+# local
+# neo4j_connection = Neo4jDatabase(
+#     host=os.environ.get("NEO4J_URL", "bolt://localhost:7687"),
+#     user=os.environ.get("NEO4J_USER", "neo4j"),
+#     password=os.environ.get("NEO4J_PASS", "password"),
+#     database=os.environ.get("NEO4J_DATABASE", "neo4j"),
+# )
+
+# cloud
+# neo4j_connection = Neo4jDatabase(
+#     host=os.environ.get("NEO4J_URL", "bolt+s://9507ceb2.databases.neo4j.io:7687"),
+#     user=os.environ.get("NEO4J_USER", "neo4j"),
+#     password=os.environ.get("NEO4J_PASS", "AUEt0WbwpSdl7LDdqfBc4jfsnwrPIlQFZkY_aKCTD-Y"),
+#     database=os.environ.get("NEO4J_DATABASE", "neo4j"),
+# )
+
+# Initialize Neo4jConnector
+# connector = Neo4jConnector(
+#     uri="neo4j://9507ceb2.databases.neo4j.io:7687",
+#     user="neo4j",
+#     password="AUEt0WbwpSdl7LDdqfBc4jfsnwrPIlQFZkY_aKCTD-Y"
+# )
 
 # Initialize LLM modules
-openai_api_key = os.environ.get("", None)
+openai_api_key = os.environ.get("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", None)
 
 # Define FastAPI endpoint
 app = FastAPI()
@@ -173,7 +193,7 @@ async def websocket_endpoint(websocket: WebSocket):
             )
 
             text2cypher = Text2Cypher(
-                database=neo4j_connection,
+                database=connect_to_neo4j_aura,
                 llm=default_llm,
                 cypher_examples=get_fewshot_examples2(api_key),
             )

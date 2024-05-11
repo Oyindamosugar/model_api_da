@@ -1,8 +1,10 @@
 import re
 from typing import Any, Dict, List, Union
 
+from SRS.driver.Neo4jConnector import Neo4jConnector
+from SRS.neo4j_test import connect_to_neo4j_aura
 from base_component import BaseComponent
-from driver.neo4j import Neo4jDatabase
+# from driver.neo4j import Neo4jDatabase
 from llm.basellm import BaseLLM
 
 
@@ -10,14 +12,17 @@ def remove_relationship_direction(cypher):
     return cypher.replace("->", "-").replace("<-", "-")
 
 
+neo4j_connection = connect_to_neo4j_aura()
+
+
 class Text2Cypher(BaseComponent):
     def __init__(
-        self,
-        llm: BaseLLM,
-        database: Neo4jDatabase,
-        use_schema: bool = True,
-        cypher_examples: str = "",
-        ignore_relationship_direction: bool = True,
+            self,
+            llm: BaseLLM,
+            database: neo4j_connection,
+            use_schema: bool = True,
+            cypher_examples: str = "",
+            ignore_relationship_direction: bool = True,
     ) -> None:
         self.llm = llm
         self.database = database
@@ -66,7 +71,7 @@ class Text2Cypher(BaseComponent):
         return cypher
 
     def run(
-        self, question: str, history: List = [], heal_cypher: bool = True
+            self, question: str, history: List = [], heal_cypher: bool = True
     ) -> Dict[str, Union[str, List[Dict[str, Any]]]]:
         # Add prefix if not part of self-heal loop
         final_question = (
