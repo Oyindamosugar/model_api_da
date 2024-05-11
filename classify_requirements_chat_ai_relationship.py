@@ -8,10 +8,10 @@ from fastapi import FastAPI, UploadFile, File, HTTPException, WebSocket, WebSock
 from fastapi.middleware.cors import CORSMiddleware
 from transformers import BertTokenizer
 
-from SRS.driver.Neo4jConnector import Neo4jConnector
-from SRS.fewshot_examples2 import get_fewshot_examples2
-from SRS.neo4j_test import connect_to_neo4j_aura
-from SRS.save_to_neo4j_relationship import create_nodes_and_relationships
+from driver.Neo4jConnector import Neo4jConnector
+from fewshot_examples2 import get_fewshot_examples2
+from neo4j_test import connect_to_neo4j_aura
+from save_to_neo4j_relationship import create_nodes_and_relationships
 # from driver.neo4j import Neo4jDatabase
 from save_to_neo4j import save_results_to_neo4j
 from llm.openai import OpenAIChat
